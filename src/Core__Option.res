@@ -34,10 +34,17 @@ let forEach = (opt, f) =>
   | None => ()
   }
 
-let getExn = x =>
+let getExn = option => {
+  switch option {
+  | Some(value) => value
+  | None => Js.Exn.raiseError("Option.getExn was called on None")
+  }
+}
+
+let getExnWithMessage = (x, message) =>
   switch x {
   | Some(x) => x
-  | None => raise(Not_found)
+  | None => Js.Exn.raiseError(message)
   }
 
 external getUnsafe: option<'a> => 'a = "%identity"
