@@ -44,7 +44,7 @@ let lastIndexOfOpt = (s, search) =>
 @send external lastIndexOfFrom: (string, string, int) => int = "lastIndexOf"
 
 @return(nullable) @send
-external match: (string, Core__RegExp.t) => option<Core__RegExp.Result.t> = "match"
+external match: (string, Js.Re.t) => option<Core__RegExp.Result.t> = "match"
 
 type normalizeForm = [#NFC | #NFD | #NFKC | #NFKD]
 @send external normalize: string => string = "normalize"
@@ -53,26 +53,26 @@ type normalizeForm = [#NFC | #NFD | #NFKC | #NFKD]
 @send external repeat: (string, int) => string = "repeat"
 
 @send external replace: (string, string, string) => string = "replace"
-@send external replaceRegExp: (string, Core__RegExp.t, string) => string = "replace"
+@send external replaceRegExp: (string, Js.Re.t, string) => string = "replace"
 
 @send
 external unsafeReplaceRegExpBy0: (
   string,
-  Core__RegExp.t,
+  Js.Re.t,
   (@uncurry ~match: string, ~offset: int, ~input: string) => string,
 ) => string = "replace"
 
 @send
 external unsafeReplaceRegExpBy1: (
   string,
-  Core__RegExp.t,
+  Js.Re.t,
   (@uncurry ~match: string, ~group1: string, ~offset: int, ~input: string) => string,
 ) => string = "replace"
 
 @send
 external unsafeReplaceRegExpBy2: (
   string,
-  Core__RegExp.t,
+  Js.Re.t,
   (
     @uncurry ~match: string,
     ~group1: string,
@@ -85,7 +85,7 @@ external unsafeReplaceRegExpBy2: (
 @send
 external unsafeReplaceRegExpBy3: (
   string,
-  Core__RegExp.t,
+  Js.Re.t,
   (
     @uncurry ~match: string,
     ~group1: string,
@@ -96,7 +96,7 @@ external unsafeReplaceRegExpBy3: (
   ) => string,
 ) => string = "replace"
 
-@send external search: (string, Core__RegExp.t) => int = "search"
+@send external search: (string, Js.Re.t) => int = "search"
 let searchOpt = (s, re) =>
   switch search(s, re) {
   | -1 => None
@@ -108,10 +108,9 @@ let searchOpt = (s, re) =>
 
 @send external split: (string, string) => array<string> = "split"
 @send external splitAtMost: (string, string, ~limit: int) => array<string> = "split"
-@send external splitByRegExp: (string, Core__RegExp.t) => array<option<string>> = "split"
+@send external splitByRegExp: (string, Js.Re.t) => array<option<string>> = "split"
 @send
-external splitByRegExpAtMost: (string, Core__RegExp.t, ~limit: int) => array<option<string>> =
-  "split"
+external splitByRegExpAtMost: (string, Js.Re.t, ~limit: int) => array<option<string>> = "split"
 
 @send external startsWith: (string, string) => bool = "startsWith"
 @send external startsWithFrom: (string, string, int) => bool = "startsWith"
