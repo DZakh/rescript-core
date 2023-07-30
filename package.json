@@ -1,17 +1,25 @@
 {
-  "name": "@rescript/core",
-  "version": "0.5.0",
+  "name": "@dzakh/rescript-core",
+  "version": "0.1.0",
+  "description": "**This is vendored stdlib for personal usage**",
   "scripts": {
-    "clean": "rescript clean",
-    "build": "rescript",
-    "watch": "rescript build -w",
+    "res:clean": "rescript clean",
+    "res:build": "rescript build -with-deps",
+    "res:dev": "rescript build -with-deps -w",
     "test": "node test/TestSuite.mjs && node test/TempTests.mjs"
   },
   "keywords": [
     "rescript"
   ],
-  "homepage": "https://github.com/rescript-association/rescript-core",
-  "author": "ReScript Team",
+  "homepage": "https://github.com/DZakh/rescript-core#readme",
+  "bugs": {
+    "url": "https://github.com/DZakh/rescript-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DZakh/rescript-core.git"
+  },
+  "author": "ReScript Team & Dmitry Zakharov",
   "license": "MIT",
   "files": [
     "README.md",

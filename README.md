@@ -1,4 +1,6 @@
-# @rescript/core
+# @dzakh/rescript-core
+
+**This is vendored stdlib for personal usage**
 
 A drop-in standard library for ReScript. Intended to be familiar for JavaScript developers, easy to use, and be rich enough (without being bloated) so that you don't need to reach for anything else for typical ReScript development.
 
@@ -37,15 +39,15 @@ We've been following a few guiding principles as we developed this:
 ReScript `>=10.1` is required.
 
 ```console
-$ npm install @rescript/core
+$ npm install @dzakh/rescript-core
 ```
 
-Then add `@rescript/core` to your `bsconfig.json`'s `bs-dependencies`:
+Then add `@dzakh/rescript-core` to your `bsconfig.json`'s `bs-dependencies`:
 
 ```diff
  {
    "bs-dependencies": [
-+    "@rescript/core"
++    "@dzakh/rescript-core"
    ]
  }
 ```
