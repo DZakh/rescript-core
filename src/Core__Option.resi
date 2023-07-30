@@ -66,7 +66,7 @@ Option.forEach(None, x => Console.log(x)) // returns ()
 let forEach: (option<'a>, 'a => unit) => unit
 
 /**
-`getExn(opt)` returns `value` if `opt` is `Some(value)`, otherwise raises an exception.
+`getExn(opt)` returns `value` if `opt` is `Some(value)`, otherwise raises a js error.
 
 ```rescript
 Option.getExn(Some(3)) // 3
@@ -78,6 +78,20 @@ Option.getExn(None) /* Raises an Error */
 - Raises an error if `opt` is `None`
 */
 let getExn: option<'a> => 'a
+
+/**
+`getExnWithMessage(opt, message)` returns `value` if `opt` is `Some(value)`, otherwise raises a js error with `message`.
+
+```rescript
+Option.getExnWithMessage(Some(3)) // 3
+Option.getExnWithMessage(None) /* Raises an Error */
+```
+
+## Exceptions
+
+- Raises an error if `opt` is `None`
+*/
+let getExnWithMessage: (option<'a>, string) => 'a
 
 /**
 `getUnsafe(opt)` returns `value` if `opt` is `Some(value)`, otherwise `undefined`.
