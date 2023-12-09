@@ -30,6 +30,12 @@ let getExn = x =>
   | Error(_) => raise(Not_found)
   }
 
+let getExnWithMessage = (x, message) =>
+  switch x {
+  | Ok(x) => x
+  | Error(_) => Js.Exn.raiseError(message)
+  }
+
 let mapOr = (opt, default, f) =>
   switch opt {
   | Ok(x) => f(x)

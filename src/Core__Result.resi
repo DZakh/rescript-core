@@ -59,6 +59,20 @@ type t<'a, 'b> = result<'a, 'b> = Ok('a) | Error('b)
 let getExn: t<'a, 'b> => 'a
 
 /**
+`getExnWithMessage(result, message)` returns `value` if `result` is `Ok(value)`, otherwise raises a js error with `message`.
+
+```rescript
+Result.getExnWithMessage(Ok(3)) // 3
+Result.getExnWithMessage(Error("foo")) /* Raises an Error */
+```
+
+## Exceptions
+
+- Raises an error if `result` is `Error`
+*/
+let getExnWithMessage: (result<'a, 'e>, string) => 'a
+
+/**
   `mapOr(res, default, f)`: When res is `Ok(n)`, returns `f(n)`,
   otherwise `default`.
 
