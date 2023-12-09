@@ -24,7 +24,7 @@ let compare = (a: int, b: int) =>
 external toFloat: int => float = "%identity"
 external fromFloat: float => int = "%intoffloat"
 
-let fromString = (~radix=?, x) => {
+let fromString = (x, ~radix=?) => {
   let maybeInt = switch radix {
   | Some(radix) => Core__Float.parseIntWithRadix(x, ~radix)
   | None => Core__Float.parseInt(x)

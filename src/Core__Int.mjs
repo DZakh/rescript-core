@@ -17,7 +17,7 @@ function compare(a, b) {
   }
 }
 
-function fromString(radix, x) {
+function fromString(x, radix) {
   var maybeInt = radix !== undefined ? parseInt(x, radix) : parseInt(x);
   if (isNaN(maybeInt) || maybeInt > 2147483647 || maybeInt < -2147483648) {
     return ;
