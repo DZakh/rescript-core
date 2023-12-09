@@ -124,9 +124,6 @@ noneValue->Option.mapOr(0, x => x + 5) // 0
 */
 let mapOr: (option<'a>, 'b, 'a => 'b) => 'b
 
-@deprecated("Use mapOr instead")
-let mapWithDefault: (option<'a>, 'b, 'a => 'b) => 'b
-
 /**
 `map(opt, f)` returns `Some(f(value))` if `opt` is `Some(value)`, otherwise `None`.
 
@@ -176,9 +173,6 @@ None->greet // "Greetings Anonymous"
 ```
 */
 let getOr: (option<'a>, 'a) => 'a
-
-@deprecated("Use getOr instead")
-let getWithDefault: (option<'a>, 'a) => 'a
 
 /**
 `orElse(opt1, opt2)` returns `opt2` if `opt1` is `None`, otherwise `opt1`.

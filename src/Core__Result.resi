@@ -86,9 +86,6 @@ let getExnWithMessage: (result<'a, 'e>, string) => 'a
 */
 let mapOr: (t<'a, 'c>, 'b, 'a => 'b) => 'b
 
-@deprecated("Use mapOr instead")
-let mapWithDefault: (t<'a, 'c>, 'b, 'a => 'b) => 'b
-
 /**
   `map(res, f)`: When res is `Ok(n)`, returns `Ok(f(n))`. Otherwise returns res
   unchanged. Function `f` takes a value of the same type as `n` and returns an
@@ -137,9 +134,6 @@ let flatMap: (t<'a, 'c>, 'a => t<'b, 'c>) => t<'b, 'c>
   ```
 */
 let getOr: (t<'a, 'b>, 'a) => 'a
-
-@deprecated("Use getOr instead")
-let getWithDefault: (t<'a, 'b>, 'a) => 'a
 
 /**
   `isOk(res)`: Returns `true` if `res` is of the form `Ok(n)`, `false` if it is

@@ -105,21 +105,15 @@ function compare(a, b, cmp) {
   }
 }
 
-var mapWithDefault = mapOr;
-
-var getWithDefault = getOr;
-
 export {
   filter ,
   forEach ,
   getExn ,
   getExnWithMessage ,
   mapOr ,
-  mapWithDefault ,
   map ,
   flatMap ,
   getOr ,
-  getWithDefault ,
   orElse ,
   isSome ,
   isNone ,

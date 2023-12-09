@@ -42,8 +42,6 @@ let mapOr = (opt, default, f) =>
   | Error(_) => default
   }
 
-let mapWithDefault = mapOr
-
 let map = (opt, f) =>
   switch opt {
   | Ok(x) => Ok(f(x))
@@ -61,8 +59,6 @@ let getOr = (opt, default) =>
   | Ok(x) => x
   | Error(_) => default
   }
-
-let getWithDefault = getOr
 
 let isOk = x =>
   switch x {

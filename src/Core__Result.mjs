@@ -117,19 +117,13 @@ function mapError(r, f) {
   }
 }
 
-var mapWithDefault = mapOr;
-
-var getWithDefault = getOr;
-
 export {
   getExn ,
   getExnWithMessage ,
   mapOr ,
-  mapWithDefault ,
   map ,
   flatMap ,
   getOr ,
-  getWithDefault ,
   isOk ,
   isError ,
   equal ,
