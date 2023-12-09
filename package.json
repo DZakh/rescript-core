@@ -4,8 +4,8 @@
   "description": "**This is vendored stdlib for personal usage**",
   "scripts": {
     "res:clean": "rescript clean",
-    "res:build": "rescript build -with-deps",
-    "res:dev": "rescript build -with-deps -w",
+    "res:build": "rescript",
+    "res": "rescript build -w",
     "test": "node test/TestSuite.mjs && node test/TempTests.mjs"
   },
   "keywords": [
@@ -31,10 +31,10 @@
     "src/**/*.mjs"
   ],
   "peerDependencies": {
-    "rescript": "^10.1.0 || ^11.0.0-alpha.0 || next"
+    "rescript": "11.0.x || ~11.0.0-rc"
   },
   "devDependencies": {
-    "rescript": "10.1.4",
+    "rescript": "11.0.0-rc.7",
     "@babel/code-frame": "7.18.6"
   }
 }
